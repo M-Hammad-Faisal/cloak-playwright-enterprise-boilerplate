@@ -29,9 +29,6 @@ jobs:
           path: ~/.cloakbrowser
           key: ${{ runner.os }}-cloakbrowser-${{ hashFiles('package-lock.json') }}
 
-      - name: Install System Dependencies
-        run: npx playwright install-deps chromium
-
       - name: Format Check
         run: npm run format -- --check
 
