@@ -1,5 +1,5 @@
 {
-  "name": "cloak-browser-boilerplate",
+  "name": "cloak-playwright-enterprise-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate for using cloak browser with playwright",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "compile": "tsc",
-    "proof": "git rev-parse --short HEAD | cowsay",
+    "proof": "git rev-parse HEAD | cowsay",
     "build": "npm run format && npm run lint && npm run compile && npm run clean && npm run start:extract && npm run proof"
   },
   "dependencies": {
