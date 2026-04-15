@@ -23,8 +23,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium --with-deps
+      - name: Cache Cloak Browser Binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cloakbrowser
+          key: ${{ runner.os }}-cloakbrowser-${{ hashFiles('package-lock.json') }}
+
+      - name: Install System Dependencies
+        run: npx playwright install-deps chromium
 
       - name: Format Check
         run: npm run format -- --check
