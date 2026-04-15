@@ -1,0 +1,36 @@
+{
+  "name": "cloak-browser-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for using cloak browser with playwright",
+  "license": "MIT",
+  "author": "Muhammad Hammad Faisal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start:extract": "tsx src/scripts/extract-items.ts",
+    "start:checkout": "tsx src/scripts/checkout-flow.ts",
+    "clean": "rm -rf dist output",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "compile": "tsc",
+    "proof": "git rev-parse --short HEAD | cowsay",
+    "build": "npm run format && npm run lint && npm run compile && npm run clean && npm run start:extract && npm run proof"
+  },
+  "dependencies": {
+    "cloakbrowser": "^0.3.24",
+    "csv-writer": "^1.6.0",
+    "playwright-core": "^1.59.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.6.0",
+    "cowsay": "^1.6.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.2.0",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.2"
+  }
+}
